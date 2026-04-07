@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Muhammed Kabir Eshiofune — Social Media Manager & Content Strategist based in Lagos, Nigeria. Open to clients and remote opportunities.">
+<title>Muhammed Kabir Eshiofune | Social Media Manager & Content Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --cream: #f7f4ef;
+  --warm: #f0ebe2;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --muted: #7a7060;
+  --border: rgba(13,13,13,0.11);
+  --dark: #111010;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem 4rem;
+  background: rgba(247,244,239,0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: "Playfair Display", serif; font-size: 1rem; letter-spacing: 0.03em; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 24px; height: 1.5px; background: var(--ink); display: block; transition: all 0.3s; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards; }
+.hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+.hero-eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--gold); }
+h1.hero-name { font-family: "Playfair Display", serif; font-size: clamp(2.2rem, 3.8vw, 3.8rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+h1.hero-name em { font-style: italic; color: var(--gold); }
+.hero-title-line { font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; }
+.avail-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: #2d7a3a; background: rgba(45,122,58,0.09); border: 1px solid rgba(45,122,58,0.2); padding: 0.35rem 0.85rem; border-radius: 2px; margin-bottom: 1.6rem; width: fit-content; }
+.avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #2d7a3a; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.intro-card { background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1.6rem 1.8rem; margin-bottom: 2rem; }
+.intro-card p { font-size: 0.92rem; color: var(--ink); line-height: 1.9; }
+
+.btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--ink); color: var(--cream); font-family: "DM Sans", sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.9rem 1.8rem; text-decoration: none; border: 1px solid var(--ink); transition: background 0.25s, border-color 0.25s, transform 0.2s; cursor: pointer; }
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+.btn-outline { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; color: var(--ink); font-family: "DM Sans", sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.9rem 1.8rem; text-decoration: none; border: 1px solid var(--border); transition: background 0.25s, border-color 0.25s; cursor: pointer; }
+.btn-outline:hover { border-color: var(--ink); background: var(--warm); }
+
+/* HERO VISUAL */
+.hero-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem 4rem; gap: 2rem; opacity: 0; animation: fadeUp 0.7s ease 0.3s forwards; }
+.profile-photo-wrap { position: relative; width: 230px; height: 270px; flex-shrink: 0; }
+.profile-photo-wrap::before { content: ""; position: absolute; top: 12px; left: 12px; right: -12px; bottom: -12px; border: 2px solid var(--gold-light); z-index: 0; }
+.profile-photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: relative; z-index: 1; display: block; filter: grayscale(20%) contrast(1.05); }
+
+.stat-cluster { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; max-width: 340px; }
+.stat-card { background: white; border: 1px solid var(--border); padding: 1.4rem 1.2rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(18px); animation: fadeUp 0.55s ease forwards; }
+.stat-card:nth-child(1){animation-delay:0.5s} .stat-card:nth-child(2){animation-delay:0.65s} .stat-card:nth-child(3){animation-delay:0.8s}
+.stat-card::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--gold-light); }
+.stat-card.accent::after { background: var(--gold); }
+.stat-platform { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.stat-number { font-family: "Playfair Display", serif; font-size: 1.7rem; line-height: 1; color: var(--ink); margin-bottom: 0.3rem; }
+.stat-label { font-size: 0.67rem; color: var(--muted); }
+.big-card { grid-column: span 2; background: var(--ink); }
+.big-card .stat-number { color: var(--gold); font-size: 2.2rem; }
+.big-card .stat-platform, .big-card .stat-label { color: rgba(247,244,239,0.5); }
+.big-card::after { background: var(--gold); }
+
+/* TICKER */
+.ticker-wrap { background: var(--ink); padding: 0.9rem 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.ticker-track { display: flex; width: max-content; animation: ticker 28s linear infinite; }
+.ticker-item { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); padding: 0 2.5rem; white-space: nowrap; }
+.ticker-item::after { content: "·"; margin-left: 2.5rem; color: var(--gold); }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* SECTIONS */
+section { padding: 7rem 4rem; }
+.section-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+.section-label::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+.section-title { font-family: "Playfair Display", serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 1rem; }
+.section-sub { font-size: 0.92rem; color: var(--muted); max-width: 480px; line-height: 1.85; }
+
+/* PORTFOLIO */
+.portfolio { background: var(--cream); }
+.port-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 1.5rem; }
+.port-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+.port-card { background: white; border: 1px solid var(--border); overflow: hidden; opacity: 0; transform: translateY(22px); transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.5s ease; }
+.port-card.visible { opacity: 1; transform: translateY(0); }
+.port-card:hover { transform: translateY(-5px); box-shadow: 0 20px 52px rgba(0,0,0,0.09); }
+.port-card-header { padding: 2rem 2.2rem 1.4rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem; }
+.port-badge { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid var(--border); color: var(--muted); }
+.port-badge.live { border-color: rgba(45,122,58,0.3); color: #2d7a3a; background: rgba(45,122,58,0.06); }
+.port-card-body { padding: 2rem 2.2rem; }
+.port-client { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.port-title { font-family: "Playfair Display", serif; font-size: 1.4rem; margin-bottom: 0.9rem; }
+.port-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.6rem; }
+.port-metrics { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.metric { font-size: 0.65rem; letter-spacing: 0.08em; padding: 0.35rem 0.8rem; background: var(--warm); color: var(--ink); border: 1px solid var(--border); }
+
+/* SERVICES — DARK SECTION */
+.services { background: var(--dark); color: var(--cream); }
+.services .section-label { color: var(--gold); }
+.services .section-label::before { background: var(--gold); }
+.services .section-title { color: var(--cream); }
+.services .section-sub { color: rgba(247,244,239,0.55); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.07); margin-top: 3.5rem; border: 1px solid rgba(255,255,255,0.07); }
+.service-item { background: var(--dark); padding: 2.2rem 2rem; transition: background 0.3s; }
+.service-item:hover { background: #1a1918; }
+.service-num { font-size: 0.6rem; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 1rem; }
+.service-name { font-family: "Playfair Display", serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 0.8rem; line-height: 1.3; }
+.service-desc { font-size: 0.82rem; color: rgba(247,244,239,0.5); line-height: 1.8; }
+
+/* RESUME — CREAM */
+.resume-section { background: var(--warm); }
+.resume-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; margin-top: 3.5rem; }
+.resume-col-title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+.resume-contact-block { background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1.4rem 1.6rem; margin-bottom: 2.5rem; font-size: 0.83rem; line-height: 2; }
+.resume-contact-block strong { font-weight: 500; }
+.resume-contact-block a { color: var(--gold); text-decoration: none; }
+.resume-contact-block a:hover { text-decoration: underline; }
+.tools-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+.tool-chip { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.38rem 0.85rem; border: 1px solid var(--border); background: white; color: var(--muted); }
+.resume-item { margin-bottom: 2rem; }
+.resume-item-title { font-family: "Playfair Display", serif; font-size: 1.05rem; margin-bottom: 0.2rem; }
+.resume-item-sub { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.2rem; }
+.resume-item-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.8rem; }
+.resume-item-body { font-size: 0.87rem; color: var(--muted); line-height: 1.85; }
+.resume-item ul { padding-left: 1.2rem; font-size: 0.87rem; color: var(--muted); line-height: 2; }
+.skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.skill-pill { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.38rem 0.85rem; border: 1px solid var(--border); background: white; color: var(--ink); }
+.resume-download { margin-top: 2.5rem; }
+
+/* CONTACT — DARK */
+.contact { background: var(--ink); color: var(--cream); text-align: center; padding: 8rem 4rem; }
+.contact-title { font-family: "Playfair Display", serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.15; margin-bottom: 1.2rem; color: var(--cream); }
+.contact-title em { font-style: italic; color: var(--gold); }
+.contact-sub { font-size: 0.92rem; color: rgba(247,244,239,0.5); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; }
+.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.contact .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 500; }
+.contact .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.contact .btn-outline { border-color: rgba(247,244,239,0.2); color: var(--cream); }
+.contact .btn-outline:hover { border-color: var(--gold); background: transparent; color: var(--gold); }
+.contact-note { font-size: 0.75rem; color: rgba(247,244,239,0.3); letter-spacing: 0.08em; }
+
+/* FOOTER */
+footer { background: #080808; padding: 1.8rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.05); }
+footer p { font-size: 0.72rem; color: rgba(247,244,239,0.25); letter-spacing: 0.06em; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* MOBILE */
+@media(max-width:900px){
+  nav { padding: 1.2rem 1.8rem; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(247,244,239,0.98); padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; padding-top: 68px; }
+  .hero-text { padding: 3rem 1.8rem 2rem; }
+  .hero-visual { padding: 2rem 1.8rem 3rem; }
+  section { padding: 5rem 1.8rem; }
+  .port-cards { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .resume-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .stat-cluster { max-width: 100%; }
+  footer { padding: 1.5rem 1.8rem; flex-direction: column; text-align: center; }
+}
+@media(max-width:560px){
+  .services-grid { grid-template-columns: 1fr; }
+  h1.hero-name { font-size: 2rem; }
+  .contact { padding: 5rem 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">MK Eshiofune</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Available for Work</p>
+    <h1 class="hero-name">Muhammed Kabir<br><em>Eshiofune</em></h1>
+    <p class="hero-title-line">Social Media Manager · Content Strategist · Lagos, Nigeria</p>
+    <div class="avail-badge"><span class="avail-dot"></span> Open to Clients &amp; Remote Roles</div>
+    <div class="intro-card">
+      <p>I help brands show up consistently, tell stories that stick, and build audiences that actually engage. From strategy to content to community — I handle it all, so you can focus on what you do best.</p>
+    </div>
+    <div class="btn-row">
+      <a href="#contact" class="btn-primary">Start Growing Your Brand →</a>
+      <a href="#work" class="btn-outline">See My Work</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="profile-photo-wrap">
+      <img src="https://i.ibb.co/HDMmzzXy/1775588272868-2.jpg" alt="Muhammed Kabir Eshiofune" class="profile-photo" id="profilePhoto">
+    </div>
+    <div class="stat-cluster">
+      <div class="stat-card">
+        <p class="stat-platform">Instagram</p>
+        <p class="stat-number">5→29</p>
+        <p class="stat-label">Followers grown</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-platform">TikTok</p>
+        <p class="stat-number">0→16</p>
+        <p class="stat-label">Followers grown</p>
+      </div>
+      <div class="stat-card accent big-card">
+        <p class="stat-platform">Month One</p>
+        <p class="stat-number">5,500+</p>
+        <p class="stat-label">Combined views across platforms</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Social Media Management</span>
+    <span class="ticker-item">Content Strategy</span>
+    <span class="ticker-item">Brand Storytelling</span>
+    <span class="ticker-item">SEO</span>
+    <span class="ticker-item">Email Marketing</span>
+    <span class="ticker-item">Content Writing</span>
+    <span class="ticker-item">Social Media Management</span>
+    <span class="ticker-item">Content Strategy</span>
+    <span class="ticker-item">Brand Storytelling</span>
+    <span class="ticker-item">SEO</span>
+    <span class="ticker-item">Email Marketing</span>
+    <span class="ticker-item">Content Writing</span>
+    <span class="ticker-item">Social Media Management</span>
+    <span class="ticker-item">Content Strategy</span>
+    <span class="ticker-item">Brand Storytelling</span>
+    <span class="ticker-item">SEO</span>
+    <span class="ticker-item">Email Marketing</span>
+    <span class="ticker-item">Content Writing</span>
+    <span class="ticker-item">Social Media Management</span>
+    <span class="ticker-item">Content Strategy</span>
+    <span class="ticker-item">Brand Storytelling</span>
+    <span class="ticker-item">SEO</span>
+    <span class="ticker-item">Email Marketing</span>
+    <span class="ticker-item">Content Writing</span>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="work" aria-labelledby="work-title">
+  <div class="port-header">
+    <div>
+      <p class="section-label">Case Studies</p>
+      <h2 class="section-title" id="work-title">Selected Work</h2>
+      <p class="section-sub">Real results and strategic thinking — built from the ground up.</p>
+    </div>
+  </div>
+  <div class="port-cards">
+    <div class="port-card">
+      <div class="port-card-header">
+        <span class="port-badge live">● Live Project</span>
+        <span style="font-size:0.7rem;color:var(--muted);">Instagram · TikTok</span>
+      </div>
+      <div class="port-card-body">
+        <p class="port-client">Inkspiration HQ</p>
+        <h3 class="port-title">Social Media Management</h3>
+        <p class="port-desc">Took on full management of Inkspiration HQ's Instagram and TikTok presence from near zero. Built a content strategy, maintained a 3×/week posting cadence, and drove consistent growth within the first month of active management.</p>
+        <div class="port-metrics">
+          <span class="metric">+480% Instagram Growth</span>
+          <span class="metric">5,500+ Combined Views</span>
+          <span class="metric">0 → 16 TikTok Followers</span>
+          <span class="metric">3× Weekly Cadence</span>
+        </div>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <span class="port-badge">Spec Project</span>
+        <span style="font-size:0.7rem;color:var(--muted);">Instagram · TikTok · Facebook</span>
+      </div>
+      <div class="port-card-body">
+        <p class="port-client">KH Cuisines</p>
+        <h3 class="port-title">Full Social Media Strategy</h3>
+        <p class="port-desc">Developed a complete social media strategy for a simulated food brand — covering audience research, content pillar definition, platform selection, posting schedules, and a KPI tracking framework ready to hand to any client.</p>
+        <div class="port-metrics">
+          <span class="metric">Audience Research</span>
+          <span class="metric">Content Pillars Defined</span>
+          <span class="metric">KPI Framework</span>
+          <span class="metric">Multi-Platform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services" aria-labelledby="services-title">
+  <p class="section-label">What I Offer</p>
+  <h2 class="section-title" id="services-title">Services</h2>
+  <p class="section-sub">Full social media management or à-la-carte — built around what your brand actually needs.</p>
+  <div class="services-grid">
+    <div class="service-item">
+      <p class="service-num">01</p>
+      <h3 class="service-name">Social Media Management</h3>
+      <p class="service-desc">Full management of Instagram, TikTok, or LinkedIn — strategy, content, captions, scheduling, and monthly reporting.</p>
+    </div>
+    <div class="service-item">
+      <p class="service-num">02</p>
+      <h3 class="service-name">Content Writing</h3>
+      <p class="service-desc">Captions, scripts, blog posts, and brand copy that sounds like you — only sharper. Written for your audience, optimised for reach.</p>
+    </div>
+    <div class="service-item">
+      <p class="service-num">03</p>
+      <h3 class="service-name">Content Strategy & Calendar</h3>
+      <p class="service-desc">A full monthly content plan with themes, post ideas, and scheduling — so you never stare at a blank screen again.</p>
+    </div>
+    <div class="service-item">
+      <p class="service-num">04</p>
+      <h3 class="service-name">SEO & Brand Storytelling</h3>
+      <p class="service-desc">Search-optimised copy paired with a brand narrative that builds trust and gets your content found.</p>
+    </div>
+    <div class="service-item">
+      <p class="service-num">05</p>
+      <h3 class="service-name">Email Marketing</h3>
+      <p class="service-desc">Newsletters and email sequences that nurture your audience and turn followers into paying clients.</p>
+    </div>
+    <div class="service-item">
+      <p class="service-num">06</p>
+      <h3 class="service-name">Account Audit & Consulting</h3>
+      <p class="service-desc">A full deep-dive into your current social presence with actionable recommendations to grow faster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="resume-section" id="resume" aria-labelledby="resume-title">
+  <p class="section-label">Resume</p>
+  <h2 class="section-title" id="resume-title">Background &amp; Experience</h2>
+  <p class="section-sub">A full picture of my experience, skills, and tools — all in one place.</p>
+  <div class="resume-grid">
+    <div>
+      <div class="resume-contact-block">
+        <p><strong>Muhammed Kabir Eshiofune</strong></p>
+        <p>Social Media Manager · Lagos, Nigeria</p>
+        <p>Available for Remote Work</p>
+        <p>✉ <a href="/cdn-cgi/l/email-protection#fa91929b989f9f88c89e929f949e888282ba9d979b9396d4999597"><span class="__cf_email__" data-cfemail="680300090a0d0d1a5a0c000d060c1a1010280f05090104460b0705">[email&#160;protected]</span></a></p>
+        <p>📸 <a href="https://www.instagram.com/inkspiration_hq" target="_blank" rel="noopener">@inkspiration_hq</a></p>
+        <p>🎵 <a href="https://www.tiktok.com/@inkspirationhq" target="_blank" rel="noopener">@inkspirationhq</a></p>
+      </div>
+      <p class="resume-col-title">Tools</p>
+      <div class="tools-grid">
+        <span class="tool-chip">Canva</span>
+        <span class="tool-chip">Buffer</span>
+        <span class="tool-chip">Meta Business Suite</span>
+        <span class="tool-chip">Google Drive</span>
+        <span class="tool-chip">Later</span>
+        <span class="tool-chip">Notion</span>
+      </div>
+      <p class="resume-col-title">Education</p>
+      <div class="resume-item">
+        <p class="resume-item-title">Ansar-Ud-Deen Grammar School</p>
+        <p class="resume-item-sub">SSCE</p>
+        <p class="resume-item-date">2011 – 2017</p>
+      </div>
+      <p class="resume-col-title" style="margin-top:2rem;">Soft Skills</p>
+      <div class="skills-row">
+        <span class="skill-pill">Communication</span>
+        <span class="skill-pill">Creativity</span>
+        <span class="skill-pill">Analytical Thinking</span>
+        <span class="skill-pill">Time Management</span>
+        <span class="skill-pill">Consistency</span>
+        <span class="skill-pill">Adaptability</span>
+      </div>
+    </div>
+    <div>
+      <p class="resume-col-title">Professional Summary</p>
+      <div class="resume-item" style="margin-top:1rem;">
+        <p class="resume-item-body">Social Media Manager and Content Writer with hands-on experience managing live brand accounts, developing content strategies, and driving measurable growth. Based in Lagos, Nigeria and available for remote roles and client partnerships worldwide.</p>
+      </div>
+      <p class="resume-col-title" style="margin-top:2.5rem;">Experience</p>
+      <div class="resume-item" style="margin-top:1.4rem;">
+        <p class="resume-item-title">Inkspiration HQ — Social Media Manager</p>
+        <p class="resume-item-sub">Instagram · TikTok</p>
+        <p class="resume-item-date">February 2026 – Present · Lagos, Nigeria (Remote-ready)</p>
+        <ul>
+          <li>Managed content creation and posting strategy across Instagram and TikTok</li>
+          <li>Grew Instagram from 5 to 29 followers and TikTok from 0 to 16 in month one</li>
+          <li>Generated 5,500+ combined views from a standing start</li>
+          <li>Maintained consistent 3×/week posting cadence across both platforms</li>
+        </ul>
+      </div>
+      <div class="resume-item" style="margin-top:1.8rem;">
+        <p class="resume-item-title">KH Cuisines — Content Strategist</p>
+        <p class="resume-item-sub">Spec Project · Instagram · TikTok · Facebook</p>
+        <p class="resume-item-date">Self-initiated · Independent</p>
+        <ul>
+          <li>Developed a full social media strategy for a simulated food brand</li>
+          <li>Conducted audience research and defined content pillars</li>
+          <li>Designed branded content in Canva across multiple post formats</li>
+          <li>Established KPIs including engagement rate, follower growth, and conversions</li>
+        </ul>
+      </div>
+      <div class="resume-item" style="margin-top:1.8rem;">
+        <p class="resume-item-title">Bayt Al Hiba — Content Strategist &amp; Brand Consultant</p>
+        <p class="resume-item-sub">Clothing Brand · Content &amp; Brand Strategy</p>
+        <p class="resume-item-date">January 2026 – April 2026 · Lagos, Nigeria</p>
+        <ul>
+          <li>Structured the brand's full content direction and posting strategy across platforms</li>
+          <li>Built content calendars and defined posting schedules for consistency and visibility</li>
+          <li>Developed content ideas and established clear content pillars aligned with target audience</li>
+          <li>Refined brand voice and communication style for a cohesive identity</li>
+          <li>Optimised WhatsApp client communication flow to build trust and drive conversions</li>
+        </ul>
+      </div>
+      <p class="resume-col-title" style="margin-top:2.5rem;">Core Skills</p>
+      <div class="skills-row">
+        <span class="skill-pill">Short-form Video</span>
+        <span class="skill-pill">Content Calendars</span>
+        <span class="skill-pill">Hashtag Research</span>
+        <span class="skill-pill">Analytics</span>
+        <span class="skill-pill">Content Strategy</span>
+        <span class="skill-pill">SEO</span>
+        <span class="skill-pill">Email Marketing</span>
+        <span class="skill-pill">Brand Storytelling</span>
+        <span class="skill-pill">Copywriting</span>
+        <span class="skill-pill">Community Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <p class="section-label" style="justify-content:center;">Let's Work Together</p>
+  <h2 class="contact-title" id="contact-title">Ready to grow<br><em>your brand?</em></h2>
+  <p class="contact-sub">I'm open to new clients and remote job opportunities. Whether you need a Social Media Manager or a sharp content strategy — let's talk.</p>
+  <div class="contact-links">
+    <a href="/cdn-cgi/l/email-protection#543f3c353631312666303c313a30262c2c143339353d387a373b39" class="btn-primary">Pitch Me Your Project →</a>
+    <a href="https://www.instagram.com/inkspiration_hq" target="_blank" rel="noopener" class="btn-outline">Instagram ↗</a>
+    <a href="https://www.tiktok.com/@inkspirationhq" target="_blank" rel="noopener" class="btn-outline">TikTok ↗</a>
+  </div>
+  <p class="contact-note">Currently available for freelance, remote, and full-time roles · Lagos, Nigeria</p>
+</section>
+</main>
+
+<footer>
+  <p>© 2026 Muhammed Kabir Eshiofune. All rights reserved.</p>
+  <p>Social Media Manager · Lagos, Nigeria</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classLis
