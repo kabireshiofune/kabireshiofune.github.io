@@ -479,13 +479,15 @@ footer p{font-size:0.68rem;color:rgba(247,244,239,0.18);letter-spacing:0.07em;}
 
 <script>
 // LOADER
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    document.getElementById('loader').classList.add('done');
-    document.getElementById('heroText').classList.add('visible');
-    document.getElementById('heroVisual').classList.add('visible');
-  },1500);
+function revealSite(){
+  document.getElementById('loader').classList.add('done');
+  document.getElementById('heroText').classList.add('visible');
+  document.getElementById('heroVisual').classList.add('visible');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(revealSite,1500);
 });
+setTimeout(revealSite,4000);
 
 // CUSTOM CURSOR
 const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
